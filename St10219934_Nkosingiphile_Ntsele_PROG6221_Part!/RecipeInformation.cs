@@ -9,10 +9,14 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
     internal class RecipeInformation
     {
         static string[] nameOfIngredient;
-        static int[] quantity;
+        static double[] quantity;
         static string[] unitMeasure;
         static int numberOfSteps;
         static string[] Description;
+
+        double[] originalQuantity;
+        double scaleFactor;
+
 
         static int numberOfIngredients;
 
@@ -27,7 +31,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             numberOfIngredients = Convert.ToInt32(Console.ReadLine() + "\n");
 
             nameOfIngredient = new string[numberOfIngredients];
-            quantity = new int[numberOfIngredients];
+            quantity = new double[numberOfIngredients];
             unitMeasure = new string[numberOfIngredients];
             int numberOfSteps;
 
@@ -37,7 +41,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 Console.Write("\n Write the ingredient name " + (g + 1) + "\n");
                 nameOfIngredient[g] = Console.ReadLine();
                 Console.Write("Write the quantity \n");
-                quantity[g] = Convert.ToInt32(Console.ReadLine());
+                quantity[g] = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Unit measure");
                 unitMeasure[g] = Console.ReadLine();
             }
@@ -57,10 +61,17 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 Description[i] = Console.ReadLine();
             }
         }
+        public void scaleQuantity()
+        {
+            Console.WriteLine("How much do you want to scale your quantities");
+            scaleFactor = Convert.ToDouble(Console.ReadLine());
 
+            for (int i = 0; i < quantity.Length; i++)
+            {
+                Console.WriteLine(quantity[i] *= scaleFactor);
+            }
+        }
        
-
-
     }
 
 }
