@@ -53,7 +53,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 }
                 else if (choose == 5)
                 {
-                    obj.clearAllData(); 
+                    obj.clearAllData();
                 }
             } while (i <= 5);
 
