@@ -116,6 +116,15 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
 
         }
 
+        public void clearAllData()
+        {
+            Console.WriteLine("Cleared");
+
+            Array.Clear(nameOfIngredient, 0, numberOfIngredients);
+            Array.Clear(originalQuantity, 0, numberOfSteps);
+            Array.Clear(unitMeasure, 0, numberOfIngredients);
+            Array.Clear(Description, 0, numberOfIngredients);
+        }
     }
 
 }
