@@ -42,6 +42,24 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 unitMeasure[g] = Console.ReadLine();
             }
         }
+        public void stepDetails()
+        {
+
+            Console.WriteLine("\n Number of steps");
+            numberOfSteps = Convert.ToInt32(Console.ReadLine());
+
+
+            Description = new string[numberOfSteps];
+            for (int i = 0; i < numberOfSteps; i++)
+            {
+
+                Console.WriteLine(" Description for step :" + (i + 1));
+                Description[i] = Console.ReadLine();
+            }
+        }
+
+       
+
 
     }
 
