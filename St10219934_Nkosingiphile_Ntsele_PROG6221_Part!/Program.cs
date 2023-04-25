@@ -34,7 +34,6 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 choose = Convert.ToInt32(Console.ReadLine());
 
 
-
                 if (choose == 1)
                 {
                     obj.recipeDetails();
@@ -42,21 +41,20 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 }
                 else if (choose == 2)
                 {
-
+                    obj.printRecipe();
                 }
                 else if (choose == 3)
                 {
-
+                    obj.scaleQuantity();
                 }
                 else if (choose == 4)
                 {
-
+                    obj.resetQuantity();
                 }
                 else if (choose == 5)
                 {
-
+                    obj.clearAllData(); 
                 }
-
             } while (i <= 5);
 
         }
