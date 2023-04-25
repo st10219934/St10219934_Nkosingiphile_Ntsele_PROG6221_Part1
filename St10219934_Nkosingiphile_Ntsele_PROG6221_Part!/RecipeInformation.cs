@@ -71,7 +71,29 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 Console.WriteLine(quantity[i] *= scaleFactor);
             }
         }
-       
+
+        public void resetQuantity()
+        {
+            string response;
+            Console.Write("Do you really want to reset your quantity \n");
+            response = Console.ReadLine();
+
+
+            if (response.Equals("yes"))
+            {
+                for (int i = 0; i < quantity.Length; i++)
+                {
+                    Console.WriteLine(quantity[i] /= scaleFactor);
+                }
+
+            }
+            else if (response.Equals("no"))
+            {
+                Console.WriteLine("You did not reset them back");
+            }
+        }
+
+
     }
 
 }
