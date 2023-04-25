@@ -25,9 +25,9 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 int choose;
                 Console.WriteLine("Choose the options below \n" +
                                   "1 to write the recipe \n" +
-                                  "2 to print and see the recipe \n" +
-                                  "3 to scale all the quantities \n" +
-                                  "4 to reset the quantities as they were \n" +
+                                  "2 to scale all the quantities \n" +
+                                  "3 to reset the quantities as they were \n" +
+                                  "4 to print and see the recipe \n" +
                                   "5 to clear all data and write a new recipe ");
 
 
@@ -41,15 +41,15 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 }
                 else if (choose == 2)
                 {
-                    obj.printRecipe();
+                     obj.scaleQuantity();
                 }
                 else if (choose == 3)
                 {
-                    obj.scaleQuantity();
+                    obj.resetQuantity();
                 }
                 else if (choose == 4)
                 {
-                    obj.resetQuantity();
+                    obj.printRecipe();
                 }
                 else if (choose == 5)
                 {

@@ -45,6 +45,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 Console.WriteLine("Unit measure");
                 unitMeasure[g] = Console.ReadLine();
             }
+            originalQuantity = quantity;
         }
         public void stepDetails()
         {
