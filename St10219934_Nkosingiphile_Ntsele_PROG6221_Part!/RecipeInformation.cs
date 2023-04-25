@@ -93,6 +93,28 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             }
         }
 
+        public void printRecipe()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            Console.WriteLine(":::::::::::The recipe:::::::::: \n" + "\n"
+                + "----------Ingredients----------");
+
+            for (int i = 0; i < numberOfIngredients; i++)
+            {
+
+                Console.WriteLine(nameOfIngredient[i] + "\t" + originalQuantity[i] + "\t" + unitMeasure[i]);
+
+
+            }
+            Console.WriteLine("\n------------Method------------- ");
+            for (int p = 0; p < numberOfSteps; p++)
+            {
+                Console.WriteLine("Step" + (p + 1) + "\n" + Description[p] + "\n");
+
+            }
+
+        }
 
     }
 
