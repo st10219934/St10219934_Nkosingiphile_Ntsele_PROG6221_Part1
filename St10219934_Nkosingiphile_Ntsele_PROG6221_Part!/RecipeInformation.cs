@@ -83,29 +83,39 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             }
         }
 
+        //method for resetting the quantity back to original 
         public void resetQuantity()
         {
+            //declared a variable to ask the user if they are sure about reseting to the original quantities
             string response;
+
+            // asking the user if they are sure about reseting to the original quantities
             Console.Write("Do you really want to reset your quantity \n");
             response = Console.ReadLine();
 
-
+            //if and else statement if for the decision taken by the user whether they are reseting or not
             if (response.Equals("yes"))
             {
+                //for loop for reseting the quantity back to their origin
                 for (int i = 0; i < quantity.Length; i++)
                 {
+                    //this is where the reseting happens
+                    //we devide the quantity by the scalefactor to go to the original quantity
                     Console.WriteLine(quantity[i] /= scaleFactor);
                 }
 
             }
+            //if the user decides no to scale
             else if (response.Equals("no"))
             {
                 Console.WriteLine("You did not reset them back");
             }
         }
 
+        //method for printing the recipe
         public void printRecipe()
         {
+            //changing the text color to be different when printing the full recipe
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine(":::::::::::The recipe:::::::::: \n" + "\n"
@@ -127,6 +137,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
 
         }
 
+        //method for clearing all the data if the user wants to enter another recipe
         public void clearAllData()
         {
             Console.WriteLine("Cleared");
