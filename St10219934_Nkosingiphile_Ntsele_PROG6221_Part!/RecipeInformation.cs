@@ -79,7 +79,9 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             {
                 //this is where the scalling happen
                 //the quantity is multiplied by the number entered by user to scale with
-                Console.WriteLine(quantity[i] *= scaleFactor);
+                quantity[i] *= scaleFactor;
+
+                Console.WriteLine("You quantity has been scaled by :"+ scaleFactor);
             }
         }
 
@@ -101,14 +103,16 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                 {
                     //this is where the reseting happens
                     //we devide the quantity by the scalefactor to go to the original quantity
-                    Console.WriteLine(quantity[i] /= scaleFactor);
+                    quantity[i] /= scaleFactor;
+
+                    Console.WriteLine("Your quantity has been reset to the original value \n");
                 }
 
             }
             //if the user decides no to scale
             else if (response.Equals("no"))
             {
-                Console.WriteLine("You did not reset them back");
+                Console.WriteLine("You did not reset them back \n");
             }
         }
 
@@ -140,13 +144,34 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         //method for clearing all the data if the user wants to enter another recipe
         public void clearAllData()
         {
-            Console.WriteLine("Cleared");
+            //making a variable to ask the user if they are sure about clearing all the data 
+            string choice;
 
-            Array.Clear(nameOfIngredient, 0, numberOfIngredients);
-            Array.Clear(originalQuantity, 0, numberOfSteps);
-            Array.Clear(unitMeasure, 0, numberOfIngredients);
-            Array.Clear(Description, 0, numberOfIngredients);
-        }
+            //Asking the user for a choice to clear data or not
+            Console.WriteLine("\n Do you really want to clear all the data and enter a new recipe");
+            choice = Console.ReadLine();
+
+            //if and else statement for user's choice of clearing data or not
+            if (choice.Equals("yes"))
+            {
+                
+
+                //this will clear all the data stored in the arrays
+                Array.Clear(nameOfIngredient, 0, numberOfIngredients);
+                Array.Clear(originalQuantity, 0, numberOfSteps);
+                Array.Clear(unitMeasure, 0, numberOfIngredients);
+                Array.Clear(Description, 0, numberOfIngredients);
+
+                //letting the user know that the data has been cleared
+                Console.WriteLine("Cleared");
+
+            }
+            else if (choice.Equals("no"))
+            {
+                //letting theuser know that the data is still captured
+                Console.WriteLine("Your data is still captured ");
+            }
+        }    
     }
 
 }
