@@ -35,7 +35,8 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                                   "2 to scale all the quantities \n" +
                                   "3 to reset the quantities as they were \n" +
                                   "4 to print and see the recipe \n" +
-                                  "5 to clear all data and write a new recipe ");
+                                  "5 to clear all data and write a new recipe \n" +
+                                  "6 to exit app \n  ");
 
                 //initialized the variable for storing user's option chosen
                 choose = Convert.ToInt32(Console.ReadLine());
@@ -70,7 +71,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                     //calling the method that prompt the user if they want to clear all the data and write a new recipe
                     obj.clearAllData();
                 }
-            } while (i <= 5);
+            } while (i <= 4);
 
         }
     }

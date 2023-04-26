@@ -24,7 +24,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         public void recipeDetails()
         {
             //asking the user on how many ingredients they want to capture
-            Console.WriteLine("How many ingredients do you want to write ");
+            Console.WriteLine("How many ingredients do you want to enter in your recipe ");
             numberOfIngredients = Convert.ToInt32(Console.ReadLine() + "\n");
 
             //initializing all the variable on how many times they should store details according to the user 
@@ -37,11 +37,11 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             //this for loop is for asking the user for recipe details according to the number of recipes they want
             for (int g = 0; g < numberOfIngredients; g++)
             {
-                Console.Write("\n Write the ingredient name " + (g + 1) + "\n");
+                Console.Write("\n Enter ingredient  " + (g + 1) + "\n");
                 nameOfIngredient[g] = Console.ReadLine();
-                Console.Write("Write the quantity \n");
+                Console.Write("Enter  the quantity \n");
                 quantity[g] = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Unit measure");
+                Console.WriteLine("Enter the unit measure");
                 unitMeasure[g] = Console.ReadLine();
             }
             originalQuantity = quantity;//initializing the variable originalQuantity so that we will be able to reset the quantity
@@ -52,7 +52,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         {
 
             //asking the user on how many steps do they wish to write
-            Console.WriteLine("\n Number of steps");
+            Console.WriteLine("\n How many steps do you want to enter");
             numberOfSteps = Convert.ToInt32(Console.ReadLine());
 
             //variable for holding the description entered by user
@@ -62,8 +62,8 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             for (int i = 0; i < numberOfSteps; i++)
             {
 
-                Console.WriteLine(" Description for step :" + (i + 1));
-                Description[i] = Console.ReadLine();
+                Console.WriteLine(" Description for step no. " + (i + 1));
+                Description[i] = Console.ReadLine()+"\n ";
             }
         }
 
@@ -92,7 +92,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             string response;
 
             // asking the user if they are sure about reseting to the original quantities
-            Console.Write("Do you really want to reset your quantity \n");
+            Console.Write("Do you really want to reset your quantity (yes/no) \n");
             response = Console.ReadLine();
 
             //if and else statement if for the decision taken by the user whether they are reseting or not
@@ -148,7 +148,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             string choice;
 
             //Asking the user for a choice to clear data or not
-            Console.WriteLine("\n Do you really want to clear all the data and enter a new recipe");
+            Console.WriteLine("\n Do you really want to clear all the data and enter a new recipe (yes/no)");
             choice = Console.ReadLine();
 
             //if and else statement for user's choice of clearing data or not
