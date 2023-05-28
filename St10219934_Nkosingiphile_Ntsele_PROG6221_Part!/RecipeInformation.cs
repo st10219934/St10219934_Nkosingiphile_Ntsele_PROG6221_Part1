@@ -264,34 +264,35 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         //method for clearing all the data if the user wants to enter another recipe
         public void clearAllData()
         {
-            //making a variable to ask the user if they are sure about clearing all the data 
-            string choice;
+            Console.WriteLine("Enter the recipe name to delete:");
+            string recipeName = Console.ReadLine();
 
-            //Asking the user for a choice to clear data or not
-               Console.WriteLine("\n Do you really want to clear all the data and enter a new recipe (yes/no)");
-               choice = Console.ReadLine();
-
-            //if and else statement for user's choice of clearing data or not
-            if (choice.Equals("yes"))
+            if (storeRecipes.ContainsKey(recipeName))
             {
-                
+                storeRecipes.Remove(recipeName);
+                storeSteps.Remove(recipeName);
 
-                //this will clear all the data stored in the arrays
-                Array.Clear(nameOfIngredient, 0, numberOfIngredients);
-                Array.Clear(originalQuantity, 0, numberOfIngredients);
-                Array.Clear(unitMeasure, 0, numberOfIngredients);
-                Array.Clear(Description, 0, numberOfIngredients);
+                // Remove the associated ingredients and quantities
+                for (int i = ingredients.Count - 1; i >= 0; i--)
+                {
+                    if (storeRecipes.Values.Any(dict => dict.Values.Any(val => val.Contains(ingredients[i]))))
+                    {
+                        ingredients.RemoveAt(i);
+                        quantity[i] = 0;
+                        unitMeasure[i] = string.Empty;
+                        foodGroup[i] = string.Empty;
+                        colories.RemoveAt(i);
+                    }
+                }
 
-                //letting the user know that the data has been cleared
-                Console.WriteLine("Cleared");
-
+                Console.WriteLine("Recipe \"" + recipeName + "\" has been cleared.");
             }
-            else if (choice.Equals("no"))
+            else
             {
-                //letting theuser know that the data is still captured
-                Console.WriteLine("Your data is still captured ");
+                Console.WriteLine("Recipe \"" + recipeName + "\" not found.");
             }
-        }    
-    }
-
+        }
+    }    
 }
+
+
