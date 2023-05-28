@@ -39,9 +39,9 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             {
                 Console.Write("\n Enter ingredient  " + (g + 1) + "\n");
                 nameOfIngredient[g] = Console.ReadLine();
-                Console.Write("Enter  the quantity \n");
+                Console.Write(" Quantity \n");
                 quantity[g] = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Enter the unit measure");
+                Console.WriteLine("Unit  measure");
                 unitMeasure[g] = Console.ReadLine();
             }
             originalQuantity = quantity;//initializing the variable originalQuantity so that we will be able to reset the quantity
@@ -119,23 +119,22 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         //method for printing the recipe
         public void printRecipe()
         {
-            //changing the text color to be different when printing the full recipe
-            Console.ForegroundColor = ConsoleColor.Red;
+                //changing the text color to be different when printing the full recipe
+                Console.ForegroundColor = ConsoleColor.Red;
 
-            Console.WriteLine(":::::::::::The recipe:::::::::: \n" + "\n"
+                Console.WriteLine(":::::::::::The recipe:::::::::: \n" + "\n"
                 + "----------Ingredients----------");
 
             for (int i = 0; i < numberOfIngredients; i++)
             {
 
-                Console.WriteLine(nameOfIngredient[i] + "\t" + originalQuantity[i] + "\t" + unitMeasure[i]);
-
+                Console.WriteLine(originalQuantity[i]+ "\t"+ unitMeasure[i]+" of "+ nameOfIngredient[i]);
 
             }
-            Console.WriteLine("\n------------Method------------- ");
+                Console.WriteLine("\n ------------Method------------- ");
             for (int p = 0; p < numberOfSteps; p++)
             {
-                Console.WriteLine("Step" + (p + 1) + "\n" + Description[p] + "\n");
+                Console.WriteLine("Step" + (p + 1) + "\n" + Description[p] );
 
             }
 
@@ -148,8 +147,8 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             string choice;
 
             //Asking the user for a choice to clear data or not
-            Console.WriteLine("\n Do you really want to clear all the data and enter a new recipe (yes/no)");
-            choice = Console.ReadLine();
+               Console.WriteLine("\n Do you really want to clear all the data and enter a new recipe (yes/no)");
+               choice = Console.ReadLine();
 
             //if and else statement for user's choice of clearing data or not
             if (choice.Equals("yes"))
@@ -158,7 +157,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
 
                 //this will clear all the data stored in the arrays
                 Array.Clear(nameOfIngredient, 0, numberOfIngredients);
-                Array.Clear(originalQuantity, 0, numberOfSteps);
+                Array.Clear(originalQuantity, 0, numberOfIngredients);
                 Array.Clear(unitMeasure, 0, numberOfIngredients);
                 Array.Clear(Description, 0, numberOfIngredients);
 
