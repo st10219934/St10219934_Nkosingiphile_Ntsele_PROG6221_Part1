@@ -215,25 +215,50 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         //method for printing the recipe
         public void printRecipe()
         {
-                //changing the text color to be different when printing the full recipe
-                Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n************************************\n" +
+                              "Here are the recipes you entered \n" +
+                              "****************************************\n ");
 
-                Console.WriteLine(":::::::::::The recipe:::::::::: \n" + "\n"
-                + "----------Ingredients----------");
-
-            for (int i = 0; i < numberOfIngredients; i++)
+            Console.ForegroundColor = ConsoleColor.Red;
+            namesOfTheRecipe.Sort();
+            foreach (string name in namesOfTheRecipe)
             {
-
-                Console.WriteLine(originalQuantity[i]+ "\t"+ unitMeasure[i]+" of "+ nameOfIngredient[i]);
-
-            }
-                Console.WriteLine("\n ------------Method------------- ");
-            for (int p = 0; p < numberOfSteps; p++)
-            {
-                Console.WriteLine("Step" + (p + 1) + "\n" + Description[p] );
-
+                Console.WriteLine(name);
             }
 
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nWhich recipe do you want to print");
+            string nameOfRecipeToPrint = Console.ReadLine();
+
+            if (storeRecipes.ContainsKey(nameOfRecipeToPrint))
+            {
+                Dictionary<int, string> recipeDetails = storeRecipes[nameOfRecipeToPrint];
+                foreach (var item in recipeDetails)
+                {
+                    Console.WriteLine(item.Value); // Display the recipe details for the specified recipe.
+                }
+            }
+            else
+            {
+                Console.WriteLine("Recipe not found.");
+                return;
+            }
+
+            Console.WriteLine("\n***************" +
+                              "\nSTEPS\n***************");
+
+            if (storeSteps.ContainsKey(nameOfRecipeToPrint))
+            {
+                foreach (var step in storeSteps[nameOfRecipeToPrint].Values)
+                {
+                    Console.WriteLine(step + "\n\n"); // Display the steps for the specified recipe.
+                }
+            }
+            else
+            {
+                Console.WriteLine("No steps found for the recipe.");
+            }
         }
 
         //method for clearing all the data if the user wants to enter another recipe
