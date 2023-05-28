@@ -47,8 +47,6 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
                     //calling the method that prompt theuser for recipe details
                     obj.recipeDetails();
 
-                    //calling the method that prompt the user for a number of stepd and its description
-                    obj.stepDetails();
                 }
                 else if (choose == 2)
                 {

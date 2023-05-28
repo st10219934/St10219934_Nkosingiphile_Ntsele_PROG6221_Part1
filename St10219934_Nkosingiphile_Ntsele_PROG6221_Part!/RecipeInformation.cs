@@ -155,25 +155,30 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
 
         }
 
-        //method for asking the number of steps and capturing the descriptions for the steps
-     
-
         // method for scalling the quantity of all the ingredients
         public void scaleQuantity()
         {
-            //asking the user on how much they want to scale their quantities to
+
+            // Prompt the user to enter the scale factor for quantity scaling
             Console.WriteLine("How much do you want to scale your quantities");
             scaleFactor = Convert.ToDouble(Console.ReadLine());
 
-            //this loop is for scalling all the quantities with the number entered by user to scale with
+            // Create a new array to store the scaled quantities
+            scaledQuantity = new double[quantity.Length];
+
+
+            // Loop through the original quantity array and scale each quantity
             for (int i = 0; i < quantity.Length; i++)
             {
-                //this is where the scalling happen
-                //the quantity is multiplied by the number entered by user to scale with
-                quantity[i] *= scaleFactor;
-
-                Console.WriteLine("You quantity has been scaled by :"+ scaleFactor);
+                scaledQuantity[i] = quantity[i] * scaleFactor;
+                quantity[i] = scaledQuantity[i];
             }
+
+            // Inform the user that the quantities have been scaled
+            Console.WriteLine("Your quantities have been scaled.");
+
+            // Update the original quantity with the scaled quantity.
+            quantity = scaledQuantity;
         }
 
         //method for resetting the quantity back to original 
