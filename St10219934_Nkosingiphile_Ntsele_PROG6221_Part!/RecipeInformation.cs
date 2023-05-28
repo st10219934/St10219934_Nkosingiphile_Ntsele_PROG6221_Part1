@@ -156,24 +156,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         }
 
         //method for asking the number of steps and capturing the descriptions for the steps
-        public void stepDetails()
-        {
-
-            //asking the user on how many steps do they wish to write
-            Console.WriteLine("\n How many steps do you want to enter");
-            numberOfSteps = Convert.ToInt32(Console.ReadLine());
-
-            //variable for holding the description entered by user
-            Description = new string[numberOfSteps];
-
-            //this for loop is for the application to know how many steps to be written by the user
-            for (int i = 0; i < numberOfSteps; i++)
-            {
-
-                Console.WriteLine(" Description for step no. " + (i + 1));
-                Description[i] = Console.ReadLine()+"\n ";
-            }
-        }
+     
 
         // method for scalling the quantity of all the ingredients
         public void scaleQuantity()
