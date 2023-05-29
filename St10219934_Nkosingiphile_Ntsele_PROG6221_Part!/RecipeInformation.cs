@@ -24,7 +24,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         public void recipeDetails()
         {
             //asking the user on how many ingredients they want to capture
-            Console.WriteLine("How many ingredients do you want to enter in your recipe ");
+            Console.WriteLine("How many ingredients do you want to enter in your recipe: ");
             numberOfIngredients = Convert.ToInt32(Console.ReadLine() + "\n");
 
             //initializing all the variable on how many times they should store details according to the user 
