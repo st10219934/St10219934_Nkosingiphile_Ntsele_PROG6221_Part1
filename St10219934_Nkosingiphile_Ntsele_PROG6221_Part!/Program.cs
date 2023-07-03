@@ -14,7 +14,6 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.BackgroundColor = ConsoleColor.Black;
 
-
             //making an object for the external class to b e able to call the methods in it
             RecipeInformation obj = new RecipeInformation();
 
