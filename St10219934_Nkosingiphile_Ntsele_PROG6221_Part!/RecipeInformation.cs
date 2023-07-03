@@ -213,56 +213,39 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         }
 
         //method for printing the recipe
-        public void printRecipe()
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("\n************************************\n" +
-                              "Here are the recipes you entered \n" +
-                              "****************************************\n ");
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            namesOfTheRecipe.Sort();
-            foreach (string name in namesOfTheRecipe)
-            {
-                Console.WriteLine(name);
-            }
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("\nWhich recipe do you want to print");
-            string nameOfRecipeToPrint = Console.ReadLine();
-
-            if (storeRecipes.ContainsKey(nameOfRecipeToPrint))
-            {
-                Dictionary<int, string> recipeDetails = storeRecipes[nameOfRecipeToPrint];
-                foreach (var item in recipeDetails)
-                {
-                    Console.WriteLine(item.Value); // Display the recipe details for the specified recipe.
-                }
-            }
-            else
-            {
-                Console.WriteLine("Recipe not found.");
-                return;
-            }
-
-            Console.WriteLine("\n***************" +
-                              "\nSTEPS\n***************");
-
-            if (storeSteps.ContainsKey(nameOfRecipeToPrint))
-            {
-                foreach (var step in storeSteps[nameOfRecipeToPrint].Values)
-                {
-                    Console.WriteLine(step + "\n\n"); // Display the steps for the specified recipe.
-                }
-            }
-            else
-            {
-                Console.WriteLine("No steps found for the recipe.");
-            }
-        }
+      
 
         //method for clearing all the data if the user wants to enter another recipe
-    
+        public void clearAllData()
+        {
+            Console.WriteLine("Enter the recipe name to delete:");
+            string recipeName = Console.ReadLine();
+
+            if (storeRecipes.ContainsKey(recipeName))
+            {
+                storeRecipes.Remove(recipeName);
+                storeSteps.Remove(recipeName);
+
+                // Remove the associated ingredients and quantities
+                for (int i = ingredients.Count - 1; i >= 0; i--)
+                {
+                    if (storeRecipes.Values.Any(dict => dict.Values.Any(val => val.Contains(ingredients[i]))))
+                    {
+                        ingredients.RemoveAt(i);
+                        quantity[i] = 0;
+                        unitMeasure[i] = string.Empty;
+                        foodGroup[i] = string.Empty;
+                        colories.RemoveAt(i);
+                    }
+                }
+
+                Console.WriteLine("Recipe \"" + recipeName + "\" has been cleared.");
+            }
+            else
+            {
+                Console.WriteLine("Recipe \"" + recipeName + "\" not found.");
+            }
+        }
     }    
 }
 
