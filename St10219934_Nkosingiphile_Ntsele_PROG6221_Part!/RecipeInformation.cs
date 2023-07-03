@@ -262,36 +262,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         }
 
         //method for clearing all the data if the user wants to enter another recipe
-        public void clearAllData()
-        {
-            Console.WriteLine("Enter the recipe name to delete:");
-            string recipeName = Console.ReadLine();
-
-            if (storeRecipes.ContainsKey(recipeName))
-            {
-                storeRecipes.Remove(recipeName);
-                storeSteps.Remove(recipeName);
-
-                // Remove the associated ingredients and quantities
-                for (int i = ingredients.Count - 1; i >= 0; i--)
-                {
-                    if (storeRecipes.Values.Any(dict => dict.Values.Any(val => val.Contains(ingredients[i]))))
-                    {
-                        ingredients.RemoveAt(i);
-                        quantity[i] = 0;
-                        unitMeasure[i] = string.Empty;
-                        foodGroup[i] = string.Empty;
-                        colories.RemoveAt(i);
-                    }
-                }
-
-                Console.WriteLine("Recipe \"" + recipeName + "\" has been cleared.");
-            }
-            else
-            {
-                Console.WriteLine("Recipe \"" + recipeName + "\" not found.");
-            }
-        }
+    
     }    
 }
 
