@@ -182,35 +182,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         }
 
         //method for resetting the quantity back to original 
-        public void resetQuantity()
-        {
-            //declared a variable to ask the user if they are sure about reseting to the original quantities
-            string response;
-
-            // asking the user if they are sure about reseting to the original quantities
-            Console.Write("Do you really want to reset your quantity (yes/no) \n");
-            response = Console.ReadLine();
-
-            //if and else statement if for the decision taken by the user whether they are reseting or not
-            if (response.Equals("yes"))
-            {
-                //for loop for reseting the quantity back to their origin
-                for (int i = 0; i < quantity.Length; i++)
-                {
-                    //this is where the reseting happens
-                    //we devide the quantity by the scalefactor to go to the original quantity
-                    quantity[i] /= scaleFactor;
-
-                    Console.WriteLine("Your quantity has been reset to the original value \n");
-                }
-
-            }
-            //if the user decides no to scale
-            else if (response.Equals("no"))
-            {
-                Console.WriteLine("You did not reset them back \n");
-            }
-        }
+      
 
         //method for printing the recipe
       
