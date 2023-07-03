@@ -28,7 +28,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
         static int numberOfIngredients;
 
 
-        
+        // this is a method for saving the recipe ingredients
 
         public void recipeDetails()
         {
