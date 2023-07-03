@@ -9,14 +9,7 @@ namespace St10219934_Nkosingiphile_Ntsele_PROG6221_Part_
     internal class RecipeInformation
     {
 
-        static List<string> namesOfTheRecipe = new List<string>();
-        static List<string> ingredients = new List<string>();
-        static List<int> colories = new List<int>();
-        static List<string> steps = new List<string>();
-        static Dictionary<string, Dictionary<int, string>> storeRecipes = new Dictionary<string, Dictionary<int, string>>();
-        static Dictionary<string, Dictionary<int, string>> storeSteps = new Dictionary<string, Dictionary<int, string>>();
-        int incr;
-
+        
         static double[] quantity;
         static string[] unitMeasure;
         static string[] foodGroup;
